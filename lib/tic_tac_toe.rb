@@ -26,22 +26,22 @@ def full?
   @board.all? { |element| element == "X" || element == "O" }
 end
 
-def draw?(board)
-  if full?(board) && !won?(board)
+def draw?
+  if full? && !won?
     return true
   else return false
   end
 end
 
-def over?(board)
-  won?(board) || draw?(board) || full?(board)
+def over?
+  won? || draw? || full?
 end
 
-def winner(board)
-  array = won?(board)
+def winner
+  array = won?
   if array == nil
     nil
-  elsif board[array[0]] == "X"
+  elsif @board[array[0]] == "X"
     "X"
   else
     "O"
@@ -106,14 +106,14 @@ end
 
 
 
-def play(board)
+def play
 
-  while !over?(board)
-    turn(board)
+  while !over?
+    turn
   end
-  if won?(board) && winner(board) == "X"
+  if won? && winner == "X"
     puts "Congratulations X!"
-  elsif won?(board) && winner(board) == "O"
+  elsif won? && winner == "O"
     puts "Congratulations O!"
   else
     puts "Cat's Game!"
