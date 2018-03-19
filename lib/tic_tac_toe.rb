@@ -1,6 +1,7 @@
 class TicTacToe
   def intialize board
-    @board = board || Array.new(9, " ")
+    board = @board
+    @board = [" "," "," "," "," "," "," "," "," "]
   end
 
 WIN_COMBINATIONS = [
